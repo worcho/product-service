@@ -3,7 +3,7 @@ services:
     container_name: postgres_container
     image: postgres:17
     environment:
-      POSTGRES_DB: plant-orders
+      POSTGRES_DB: localDb
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: admin
     volumes:
