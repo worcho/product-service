@@ -1,10 +1,14 @@
-package plant_shop.product_service.servicies;
+package plant_shop.product_service.service;
 
-import org.springframework.stereotype.Service;
 import plant_shop.product_service.controllers.dtos.ProductDto;
 
-@Service
+import java.util.List;
+
 public interface ProductService {
 
     ProductDto create(ProductDto product);
+
+    List<ProductDto> getAll();
+
+    ProductDto getById(Long id);
 }
