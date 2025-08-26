@@ -1,7 +1,7 @@
-package plant_shop.product_service.common;
+package plant_shop.product_service.util;
 
-import plant_shop.product_service.controllers.dtos.ProductDto;
-import plant_shop.product_service.models.ProductEntity;
+import plant_shop.product_service.controller.dtos.ProductDto;
+import plant_shop.product_service.entity.ProductEntity;
 
 public class DtoEntityMapper {
 

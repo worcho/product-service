@@ -1,4 +1,4 @@
-package plant_shop.product_service.models;
+package plant_shop.product_service.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,7 +8,6 @@ import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
-import plant_shop.product_service.controllers.dtos.ProductDto;
 
 import java.math.BigDecimal;
 

@@ -1,9 +1,11 @@
 package plant_shop.product_service.service.impl;
 
 import org.springframework.stereotype.Service;
-import plant_shop.product_service.common.DtoEntityMapper;
-import plant_shop.product_service.controllers.dtos.ProductDto;
-import plant_shop.product_service.repositories.ProductRepository;
+import plant_shop.product_service.entity.ProductEntity;
+import plant_shop.product_service.exception.ProductNotFoundException;
+import plant_shop.product_service.util.DtoEntityMapper;
+import plant_shop.product_service.controller.dtos.ProductDto;
+import plant_shop.product_service.repository.ProductRepository;
 import plant_shop.product_service.service.ProductService;
 
 import java.util.List;
@@ -32,8 +34,8 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ProductDto getById(Long id) {
-        return productRepository.findById(id)
-                .map(DtoEntityMapper::convertToDto)
-                .orElse(null);
+        ProductEntity productEntity = productRepository.findById(id)
+                .orElseThrow(() -> new ProductNotFoundException("Product not found with id: " + id));
+        return DtoEntityMapper.convertToDto(productEntity);
     }
 }
