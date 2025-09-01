@@ -1,6 +1,7 @@
 package plantShop.product.service.impl;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import plantShop.product.entity.ProductEntity;
 import plantShop.product.exception.ProductNotFoundException;
 import plantShop.product.util.DtoEntityMapper;
@@ -20,6 +21,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    @Transactional
     public ProductDto create(ProductDto product) {
         return DtoEntityMapper.convertToDto(productRepository.save(DtoEntityMapper.convertToEntity(product)));
     }
@@ -37,5 +39,26 @@ public class ProductServiceImpl implements ProductService {
         ProductEntity productEntity = productRepository.findById(id)
                 .orElseThrow(() -> new ProductNotFoundException("Product not found with id: " + id));
         return DtoEntityMapper.convertToDto(productEntity);
+    }
+
+    @Override
+    @Transactional
+    public ProductDto updateById(Long id, ProductDto dto) {
+        ProductEntity productEntity = productRepository.findById(id)
+                .orElseThrow(() -> new ProductNotFoundException("Product not found with id: " + id));
+        productEntity.setName(dto.getName());
+        productEntity.setPrice(dto.getPrice());
+        return DtoEntityMapper.convertToDto(productEntity);
+    }
+
+    @Override
+    @Transactional
+    public void deleteById(Long id) {
+        boolean exists = productRepository.existsById(id);
+        if (exists){
+            productRepository.deleteById(id);
+        }else {
+            throw new ProductNotFoundException(("Product not found with id: " + id));
+        }
     }
 }
