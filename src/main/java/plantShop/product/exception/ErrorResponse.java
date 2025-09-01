@@ -1,4 +1,4 @@
-package plant_shop.product_service.exception;
+package plantShop.product.exception;
 
 
 import lombok.AllArgsConstructor;

@@ -1,4 +1,4 @@
-package plant_shop.product_service.controller.dtos;
+package plantShop.product.controller.dtos;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.PositiveOrZero;

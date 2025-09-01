@@ -1,4 +1,4 @@
-package plant_shop.product_service.exception;
+package plantShop.product.exception;
 
 public class ProductNotFoundException extends RuntimeException {
 

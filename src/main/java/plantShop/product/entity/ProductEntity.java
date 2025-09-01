@@ -1,4 +1,4 @@
-package plant_shop.product_service.entity;
+package plantShop.product.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

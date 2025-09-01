@@ -1,6 +1,6 @@
-package plant_shop.product_service.service;
+package plantShop.product.service;
 
-import plant_shop.product_service.controller.dtos.ProductDto;
+import plantShop.product.controller.dtos.ProductDto;
 
 import java.util.List;
 

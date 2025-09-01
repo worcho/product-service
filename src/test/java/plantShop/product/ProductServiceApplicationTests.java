@@ -1,4 +1,4 @@
-package plant_shop.product_service;
+package plantShop.product;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
